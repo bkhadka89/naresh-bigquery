@@ -97,6 +97,9 @@ def makeWebhookResult(data):
              ", the temperature is " + condition.get('temp') + " " + units.get('temperature')
 
     print (os.environ['XPLENTY_ACCOUNT_ID'])
+    print (os.environ['GOOGLE_APPLICATION_CREDENTIALS'])
+
+
     print("Response with big:")
     print(speech)
     big()
@@ -110,7 +113,7 @@ def makeWebhookResult(data):
 
 
 def big():
-    print ("here I am in the module for BIGQUERY getappdefault o project id")
+    print ("here I am in the module for BIGQUERY getappdefault o project iddddd")
     # Instantiates a client
     #bigquery_client = bigquery.Client(project='tubeproject-155919')
     bigquery_client = bigquery.Client()
