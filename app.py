@@ -41,6 +41,10 @@ def webhook():
     # print(res)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
+
+    print ("variable")
+    print (os.environ['GOOGLE_APPLICATION_CREDENTIALS'])
+
     return r
 
 
@@ -96,8 +100,6 @@ def makeWebhookResult(data):
     speech = "no commens,   Today in " + location.get('city') + ": " + condition.get('text') + \
              ", the temperature is " + condition.get('temp') + " " + units.get('temperature')
 
-    print (os.environ['XPLENTY_ACCOUNT_ID'])
-    print (os.environ['GOOGLE_APPLICATION_CREDENTIALS'])
 
 
     print("Response with big:")
