@@ -87,7 +87,7 @@ def makeWebhookResult(data):
 
     # print(json.dumps(item, indent=4))
 
-    speech = "Howdy Mate BQ !  Today in " + location.get('city') + ": " + condition.get('text') + \
+    speech = "bq comments !  Today in " + location.get('city') + ": " + condition.get('text') + \
              ", the temperature is " + condition.get('temp') + " " + units.get('temperature')
 
     print (os.environ['XPLENTY_ACCOUNT_ID'])
@@ -107,18 +107,27 @@ def big():
     print ("here I am in the module for BIGQUERY ")
     # Instantiates a client
     bigquery_client = bigquery.Client(project='tubeproject-155919')
+    print ("bq 1")
     query_results = bigquery_client.run_sync_query("""
+    print ("bq 2")
     SELECT
         APPROX_TOP_COUNT(corpus, 10) as title,
         COUNT(*) as unique_words
     FROM `publicdata.samples.shakespeare`;""")
+    print ("bq 3")
     # Use standard SQL syntax for queries.
     # See: https://cloud.google.com/bigquery/sql-reference/
     query_results.use_legacy_sql = False
+    print ("bq 4")
+
     query_results.run()
+    print ("bq 5")
     query_results.fetch_data()
+    print ("bq 6")
     print  (query_results.project)
+    print ("bq 7")
     page_token = None
+    print ("bq 8")
 
     while True:
         rows, total_rows, page_token = query_results.fetch_data(
