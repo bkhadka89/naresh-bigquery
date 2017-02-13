@@ -16,7 +16,7 @@ print ("1111")
 from google.cloud import bigquery
 print ("2222")
 
-#from oauth2client.client import GoogleCredentials
+from oauth2client.client import GoogleCredentials
 
 print ("333")
 credentials = GoogleCredentials.get_application_default()
