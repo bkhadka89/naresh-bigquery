@@ -14,7 +14,7 @@ from flask import make_response
 from google.cloud import bigquery
 from oauth2client.client import GoogleCredentials
 print ("111222333345")
-#credentials = GoogleCredentials.get_application_default()
+credentials = GoogleCredentials.get_application_default()
 #GoogleCredentials.get_access_token()
 
 
@@ -104,7 +104,7 @@ def makeWebhookResult(data):
 
 
 def big():
-    print ("here I am in the module for BIGQUERY 1234")
+    print ("here I am in the module for BIGQUERY getappdefault credentials")
     # Instantiates a client
     bigquery_client = bigquery.Client(project='tubeproject-155919')
     print ("bq 1")
