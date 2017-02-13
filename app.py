@@ -11,10 +11,16 @@ from flask import Flask
 from flask import request
 from flask import make_response
 
+print ("1111")
+
 from google.cloud import bigquery
+print ("2222")
+
 from oauth2client.client import GoogleCredentials
-print ("111222333345")
-credentials = GoogleCredentials.get_application_default()
+
+print ("333")
+#credentials = GoogleCredentials.get_application_default()
+
 #GoogleCredentials.get_access_token()
 
 
