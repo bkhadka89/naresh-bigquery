@@ -19,9 +19,9 @@ print ("2222")
 from oauth2client.client import GoogleCredentials
 
 print ("333")
-#credentials = GoogleCredentials.get_application_default()
+credentials = GoogleCredentials.get_application_default()
 
-#GoogleCredentials.get_access_token()
+GoogleCredentials.get_access_token()
 
 
 # Flask app should start in global layout
@@ -110,9 +110,10 @@ def makeWebhookResult(data):
 
 
 def big():
-    print ("here I am in the module for BIGQUERY getappdefault credentials")
+    print ("here I am in the module for BIGQUERY getappdefault o project id")
     # Instantiates a client
-    bigquery_client = bigquery.Client(project='tubeproject-155919')
+    #bigquery_client = bigquery.Client(project='tubeproject-155919')
+    bigquery_client = bigquery.Client()
     print ("bq 1")
     query_results = bigquery_client.run_sync_query("""
     print ("bq 2")
