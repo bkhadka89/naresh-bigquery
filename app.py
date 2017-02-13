@@ -16,12 +16,12 @@ print ("1111")
 from google.cloud import bigquery
 print ("2222")
 
-from oauth2client.client import GoogleCredentials
+#from oauth2client.client import GoogleCredentials
 
 print ("333")
-credentials = GoogleCredentials.get_application_default()
+#credentials = GoogleCredentials.get_application_default()
 
-GoogleCredentials.get_access_token()
+#GoogleCredentials.get_access_token()
 
 
 # Flask app should start in global layout
@@ -93,7 +93,7 @@ def makeWebhookResult(data):
 
     # print(json.dumps(item, indent=4))
 
-    speech = "bq comments !  Today in " + location.get('city') + ": " + condition.get('text') + \
+    speech = "no commens,   Today in " + location.get('city') + ": " + condition.get('text') + \
              ", the temperature is " + condition.get('temp') + " " + units.get('temperature')
 
     print (os.environ['XPLENTY_ACCOUNT_ID'])
