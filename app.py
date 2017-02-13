@@ -93,7 +93,7 @@ def makeWebhookResult(data):
     print (os.environ['XPLENTY_ACCOUNT_ID'])
     print("Response:")
     print(speech)
-
+    big()
     return {
         "speech": speech,
         "displayText": speech,
@@ -101,6 +101,37 @@ def makeWebhookResult(data):
         # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
     }
+
+
+def big():
+    # Instantiates a client
+    bigquery_client = bigquery.Client(project='tubeproject-155919')
+    query_results = bigquery_client.run_sync_query("""
+    SELECT
+        APPROX_TOP_COUNT(corpus, 10) as title,
+        COUNT(*) as unique_words
+    FROM `publicdata.samples.shakespeare`;""")
+    # Use standard SQL syntax for queries.
+    # See: https://cloud.google.com/bigquery/sql-reference/
+    query_results.use_legacy_sql = False
+    query_results.run()
+    query_results.fetch_data()
+    print  (query_results.project)
+    page_token = None
+
+    while True:
+        rows, total_rows, page_token = query_results.fetch_data(
+            max_results=10,
+            page_token=page_token)
+
+        for row in rows:
+            print(row)
+
+        if not page_token:
+            break
+
+    print ("completed")
+
 
 
 if __name__ == '__main__':
