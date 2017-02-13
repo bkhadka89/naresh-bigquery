@@ -42,8 +42,6 @@ def webhook():
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
 
-    print ("variable")
-    print (os.environ['GOOGLE_APPLICATION_CREDENTIALS'])
 
     return r
 
@@ -116,6 +114,10 @@ def makeWebhookResult(data):
 
 def big():
     print ("here I am in the module for BIGQUERY getappdefault o project iddddd")
+
+    print ("variable")
+    print (os.environ['GOOGLE_APPLICATION_CREDENTIALS'])
+
     # Instantiates a client
     #bigquery_client = bigquery.Client(project='tubeproject-155919')
     bigquery_client = bigquery.Client()
