@@ -91,7 +91,7 @@ def makeWebhookResult(data):
              ", the temperature is " + condition.get('temp') + " " + units.get('temperature')
 
     print (os.environ['XPLENTY_ACCOUNT_ID'])
-    print("Response:")
+    print("Response with big:")
     print(speech)
     big()
     return {
@@ -104,6 +104,7 @@ def makeWebhookResult(data):
 
 
 def big():
+    print ("here I am in the module for BIGQUERY ")
     # Instantiates a client
     bigquery_client = bigquery.Client(project='tubeproject-155919')
     query_results = bigquery_client.run_sync_query("""
