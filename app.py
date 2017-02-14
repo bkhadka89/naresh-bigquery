@@ -18,8 +18,19 @@ print ("2222")
 
 from oauth2client.client import GoogleCredentials
 
+from StringIO import StringIO
+from oauth2client.service_account import ServiceAccountCredentials
+
+#scopes = ['https://www.googleapis.com/auth/sqlservice.admin']
+scopes = ['https://www.googleapis.com/auth/bigquery']
+
+
+credentials = ServiceAccountCredentials.from_json_keyfile_name(StringIO(os.environ['GOOGLE_APPLICATION_CREDENTIALS']), scopes)
+
+
+
 print ("333")
-credentials = GoogleCredentials.get_application_default()
+#credentials = GoogleCredentials.get_application_default()
 print ("444")
 
 #GoogleCredentials.get_access_token()
