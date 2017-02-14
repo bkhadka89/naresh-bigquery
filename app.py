@@ -11,14 +11,9 @@ from flask import Flask
 from flask import request
 from flask import make_response
 
-print ("1111222")
 
 from google.cloud import bigquery
-print ("2222")
-
 from oauth2client.client import GoogleCredentials
-
-from StringIO import StringIO
 from oauth2client.service_account import ServiceAccountCredentials
 
 #scopes = ['https://www.googleapis.com/auth/sqlservice.admin']
@@ -27,18 +22,7 @@ scopes = ['https://www.googleapis.com/auth/bigquery']
 
 #credentials = ServiceAccountCredentials.from_json_keyfile_name(StringIO(os.environ['GOOGLE_APPLICATION_CREDENTIALS']), scopes)
 print ("agbout to 1")
-filecontent= StringIO.read(os.getenv('GOOGLE_APPLICATION_CREDENTIALS'))
-print (filecontent)
-filename= os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
-print ("filename")
-
-print (filename)
-
-print ("about to 222")
-credentials = ServiceAccountCredentials.from_json_keyfile_name(filename, scopes)
-
-
-
+#credentials = ServiceAccountCredentials.from_json_keyfile_name(filename, scopes)
 print ("333")
 #credentials = GoogleCredentials.get_application_default()
 print ("444")
@@ -124,7 +108,7 @@ def makeWebhookResult(data):
 
     print("Response with big:")
     print(speech)
-    big()
+    #big()
     return {
         "speech": speech,
         "displayText": speech,
