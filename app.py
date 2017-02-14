@@ -26,7 +26,10 @@ scopes = ['https://www.googleapis.com/auth/bigquery']
 
 
 #credentials = ServiceAccountCredentials.from_json_keyfile_name(StringIO(os.environ['GOOGLE_APPLICATION_CREDENTIALS']), scopes)
-credentials = ServiceAccountCredentials.from_json_keyfile_name(os.environ['GOOGLE_APPLICATION_CREDENTIALS'], scopes)
+print ("agbout to 1")
+filename=os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+print ("about to2")
+credentials = ServiceAccountCredentials.from_json_keyfile_name(filename, scopes)
 
 
 
